@@ -1,18 +1,16 @@
-
 import { Outlet } from 'react-router'
 import './App.css'
-import { Navbar } from './components/Navbar'
+import Navbar from './components/Navbar'; // Default import
 
 function App() {
-
   return (
     <div className="bg-white">
-      <Navbar></Navbar>
+      <Navbar />
       <main className="max-w-7xl min-h-screen mx-auto px-4">
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

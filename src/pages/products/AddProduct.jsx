@@ -7,7 +7,6 @@ export const AddProduct = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
       } = useForm();
 
     const dispatch = useDispatch();

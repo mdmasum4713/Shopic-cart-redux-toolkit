@@ -1,30 +1,36 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/carts/cartsSlice";
 
-export const ProductCard = ({ product }) => {
-  if (!product) return <p className="text-red-500">Invalid Product Data</p>;
+const ProductCard = ({ product }) => {
+  const {  name, image, price } = product || {};
 
-  const {  name, image, price, } = product;
+  const dispatch = useDispatch();
 
-  // console.log("Product Data:", product);
-  // console.log("Product Image:", image);
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="card bg-white w-96 shadow-xl">
-    <figure>
-      <img
-        src={image}
-        alt="Shoes"
-        className="w-full h-48 object-cover"
-      />
-    </figure>
-    <div className="card-body text-gray-700">
-      <h2 className="card-title">{name}</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div className="card-actions items-center justify-end">
+      <figure>
+        <img src={image} alt={name} className="w-full h-48 object-cover" />
+      </figure>
+      <div className="card-body text-gray-700">
+        <h2 className="card-title">{name}</h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div className="card-actions items-center justify-end">
           <p className="text-xl font-semibold">${price}</p>
-        <button  className="btn btn-primary bg-indigo-600 text-white">Add to Cart</button>
+          <button
+            onClick={handleAddToCart}
+            className="btn btn-primary bg-indigo-600 text-white"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
+
+export { ProductCard };
