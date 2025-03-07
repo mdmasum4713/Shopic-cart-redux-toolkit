@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ProductCard } from '../products/ProductCard';
+import { AddProduct } from '../products/AddProduct';
 
 export const Home = () => {
     const Products = useSelector((state) => state.products) || [];
@@ -23,7 +24,9 @@ export const Home = () => {
                         }
                     </div>
                 </div>
-                <div className='lg:ml-20 ml-0'>Add New Products</div>
+                <div className='lg:ml-20 ml-0'>
+                    <AddProduct></AddProduct>
+                </div>
             </div>
         </div>
     );

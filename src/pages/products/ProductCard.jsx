@@ -3,10 +3,10 @@ import React from "react";
 export const ProductCard = ({ product }) => {
   if (!product) return <p className="text-red-500">Invalid Product Data</p>;
 
-  const { id, name, image, price, category, date } = product;
+  const {  name, image, price, } = product;
 
-  console.log("Product Data:", product);
-  console.log("Product Image:", image);
+  // console.log("Product Data:", product);
+  // console.log("Product Image:", image);
 
   return (
     <div className="card bg-white w-96 shadow-xl">

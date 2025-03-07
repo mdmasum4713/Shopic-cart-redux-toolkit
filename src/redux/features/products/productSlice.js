@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
     {
@@ -25,21 +25,21 @@ const initialState = [
         image: "https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         date: "2021-05-18",
     }
-]
+];
 
 const productSlice = createSlice({
     name: "products",
     initialState,
-    reducers:{
+    reducers: {
         addProduct: (state, action) => {
-            // console.log(action.payload)
+            // console.log(action.payload);
             state.push({
-                id: state.length > 0 ? state[state.length - 1].id : 1,
+                id: state.length > 0 ? state[state.length - 1].id + 1 : 1,  // id + 1 fix
                 ...action.payload
-            })
+            });
         }
     }
-})
+});
 
-export const {addProduct} = productSlice.actions;
+export const { addProduct } = productSlice.actions;
 export default productSlice.reducer;
