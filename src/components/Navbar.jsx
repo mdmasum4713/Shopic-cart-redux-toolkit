@@ -29,12 +29,7 @@ const Navbar = () => {
             <Link to="/" className="hover:text-yellow-500 hover:underline">
               Home
             </Link>
-            <Link
-              to="/products"
-              className="hover:text-yellow-500 hover:underline"
-            >
-              Products
-            </Link>
+       
 
             {/* Cart Icon */}
             <div className="dropdown dropdown-end">
